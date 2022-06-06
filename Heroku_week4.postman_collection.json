@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "abc3c3f7-a380-4a3f-8028-4b47b0121ff2",
+		"name": "Heroku_week4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19763572"
+	},
+	"item": [
+		{
+			"name": "取得所有貼文",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://metawall-week4.herokuapp.com/posts?timesort=asc",
+					"protocol": "https",
+					"host": [
+						"metawall-week4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "timesort",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增貼文",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"629dcb9dabae0bec667122a7\",\r\n    \"content\": \"新增貼文\",\r\n    \"tags\": \"心情\",\r\n    \"type\": \"group\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://metawall-week4.herokuapp.com/post",
+					"protocol": "https",
+					"host": [
+						"metawall-week4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://metawall-week4.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"metawall-week4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://metawall-week4.herokuapp.com/post/629dfaae480a821a58745a88",
+					"protocol": "https",
+					"host": [
+						"metawall-week4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"629dfaae480a821a58745a88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"修改貼文\",\r\n    \"tags\": \"天氣\",\r\n    \"type\": \"group\",\r\n    \"likes\": 300\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://metawall-week4.herokuapp.com/post/629dfaae480a821a58745a88",
+					"protocol": "https",
+					"host": [
+						"metawall-week4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"629dfaae480a821a58745a88"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

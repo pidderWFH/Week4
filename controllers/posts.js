@@ -8,7 +8,7 @@ const posts = {
     //     serviceHandle.handleSucess(res, allPost);
     // },
     async getAllPosts(req, res){
-        const timeSort = req.query.timeSort == "asc" ? "createdAt":"-createdAt"
+        const timeSort = req.query.timeSort === "asc" ? "createdAt":"-createdAt";
         const q = req.query.q !== undefined ? {"content": new RegExp(req.query.q)} : {};
         const allPost = await Post.find(q).populate({
             path: 'user',
